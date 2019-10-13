@@ -19,7 +19,6 @@
         <main>
             <h2>this is the authors.html page</h2>
             <section th:each="author: ${authors}">
-                <p th:text="${author.id}">ID Should go here</p>
                 <p th:text="${author.name}">Name should go here</p>
             </section>
         </main>
