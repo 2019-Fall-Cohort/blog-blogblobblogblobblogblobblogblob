@@ -11,6 +11,7 @@ public class AuthorController {
 	
 	@GetMapping("/authors")
 	public String prepareAuthorView(Model model) {
+//		authorStorage.addAuthorToAvoidNullPointer();
 		Iterable<Author> retrievedAuthors = authorStorage.findAllAuthors();
 		model.addAttribute("authors", retrievedAuthors);
 		return "authors";
