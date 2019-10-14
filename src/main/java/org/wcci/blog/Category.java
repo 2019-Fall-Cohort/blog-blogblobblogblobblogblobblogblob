@@ -16,6 +16,8 @@ public class Category {
 		this.name = name;
 		
 	}
+	
+	protected Category() {}
 
 	public String getName() {
 		return name;

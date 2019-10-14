@@ -5,37 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog Blob's Authors</title>
+    <title>Blog Blob: Authors</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
 
-    <div class="wrapper">
+    <div class="main__wrapper">
 
-        <header>
+        <section class="main__header" th:insert="/html/sections/header :: header"></section>
+        <section class="main__nav" th:insert="/html/sections/nav :: nav"></section>
 
-        </header>
+        <article class="author__container">
 
-        <main>
             <h2>this is the authors.html page</h2>
-            <form action="/createAuthor" method="POST">
-                <label>Author name: <input type="text" name="name"/></label>
-                <button>Submit</button>
-            <ul th:each="author: ${authors}">
+
+            <section class="author__form">
+                <form action="/createAuthor" method="POST">
+                    <label for="name">Author name:</label>
+                    <input type="text" name="name"></input>
+                    <button>Submit</button>
+                </form>
+            </section>
+
+            <section class="author__list">
+                <ul th:each="author: ${authors}">
                     <li th:text="${author.name}">Name should go here</li>
-            </ul>
+                </ul>
+            </section>
 
-        </main>
+        </article>
 
-        <footer>
-
-
-        </footer>
-
-
+        <section class="main__footer" th:insert="/html/sections/footer :: footer"></section>
     </div>
-
-
 
 </body>
 
