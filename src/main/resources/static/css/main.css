@@ -1,0 +1,19 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+html {
+  font: 20px/1;
+
+}
+
+.wrapper {
+    background-color: olivedrab;
+}
+
+.header {
+    background-color: brown;
+}
