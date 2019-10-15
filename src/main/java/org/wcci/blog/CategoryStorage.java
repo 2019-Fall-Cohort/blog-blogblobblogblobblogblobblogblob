@@ -11,8 +11,11 @@ public class CategoryStorage {
 	
 
 	public Iterable<Category> findAllCategories() {
-		// TODO Auto-generated method stub
 		return categoryRepo.findAll();
+	}
+
+	public void addCategory(Category category) {
+		categoryRepo.save(category);
 	}
 
 }
