@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 20px/1;
+}
+
+.author__container {
+  background-color: coral;
+}
+
+.main__footer {
+  background-color: aqua; 
+  width: 100%;
+}
+
+.main__header {
+  background-color: brown;
+}
+
+.main__nav {
+  background-color: chartreuse;  
+}
+
+.main__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+
