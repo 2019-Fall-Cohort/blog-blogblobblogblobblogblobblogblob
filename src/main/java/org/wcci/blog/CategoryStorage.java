@@ -17,5 +17,9 @@ public class CategoryStorage {
 	public void addCategory(Category category) {
 		categoryRepo.save(category);
 	}
+	
+	public Category findCategoryById(Long id) {
+		return categoryRepo.findById(id).get();
+	}
 
 }

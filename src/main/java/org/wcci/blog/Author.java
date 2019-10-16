@@ -29,4 +29,20 @@ public class Author {
 		return name;
 	}
 	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	@Override
+	public String toString() {
+		return "Author [id=" + id + ", name=" + name + ", posts=" + posts + "]";
+	}
+	
+	
 }

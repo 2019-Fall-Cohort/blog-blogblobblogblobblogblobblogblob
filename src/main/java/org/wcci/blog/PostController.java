@@ -20,19 +20,25 @@ public class PostController {
 	public String preparePostView(Model model) {
 		Iterable<Post> retrievedPosts = postStorage.findAllPosts();
 		model.addAttribute("posts", retrievedPosts);
+
+		Iterable<Author> retrievedAuthors = authorStorage.findAllAuthors();
+		model.addAttribute("authors", retrievedAuthors);
+		
+		Iterable<Category> retrievedCategories = categoryStorage.findAllCategories();
+		model.addAttribute("categories", retrievedCategories);
+		
 		return "posts";
 	}
 
 	@PostMapping("/createPost")
-	public String createPost(String title, String text) {
-		Category category = new Category("Fake Category");
-		categoryStorage.addCategory(category);
+	public String createPost(String title, String text, Long authorId, Long categoryId) {
 		
-		Author author = new Author("Fake Person");
-		authorStorage.addAuthor(author);
+		Category category = categoryStorage.findCategoryById(categoryId);
+		Author author = authorStorage.findAuthorById(authorId);
 		
 		Post post = new Post(title, text, author, category);
 		postStorage.addPost(post);
+		
 		return "redirect:/posts";
 	}
 

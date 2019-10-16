@@ -28,5 +28,19 @@ public class Category {
 	public String getName() {
 		return name;
 	}
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", posts=" + posts + "]";
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public List<Post> getPosts() {
+		return posts;
+	}
+	
 	
 }
