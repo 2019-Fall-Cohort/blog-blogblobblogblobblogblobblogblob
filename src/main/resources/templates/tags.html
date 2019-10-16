@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog Blob: Tags</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+ 
+<body>
+
+    <div class="main__wrapper">
+
+        <section class="main__header" th:insert="/html/sections/header :: header"></section>
+        <section class="main__nav" th:insert="/html/sections/nav :: nav"></section>
+
+        <article class="tag__container">
+
+            <h2 class="article__title">Add & View Tags</h2>
+
+            <section class="tag__form">
+                <form action="/createTag" method="POST">
+                    <label for="name">Tag name:</label>
+                    <input type="text" name="name"></input>
+                    <button>Submit</button>
+                </form>
+            </section>
+
+            <section class="tag__list">
+                <ul th:each="tag: ${tags}">
+                    <li th:text="${tag.name}">Name should go here</li>
+                </ul>
+            </section>
+
+        </article>
+
+        <section class="main__footer" th:insert="/html/sections/footer :: footer"></section>
+    </div>
+
+</body>
+
+</html>

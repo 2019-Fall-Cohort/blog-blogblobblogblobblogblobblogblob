@@ -5,37 +5,38 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
-public class Category {
+public class Tag {
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String name;
-	
-	@OneToMany(mappedBy = "category")
+
+	@ManyToMany(mappedBy = "tags")
 	private List<Post> posts;
 
-	public Category(String name) {
+	public Tag(String name) {
 		this.name = name;
 	}
-	
-	protected Category() {}
+
+	protected Tag() {
+	}
 
 	public String getName() {
 		return name;
 	}
 
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", posts=" + posts + "]";
-	}
-
 	public Long getId() {
 		return id;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Tag [id=" + id + ", name=" + name + ", posts=" + posts + "]";
+	}
+
 }
