@@ -21,5 +21,9 @@ public class AuthorStorage {
 		Author author = new Author("First Author");
 		addAuthor(author);
 	}
+	
+	public Author findAuthorById(Long id) {
+		return authorRepo.findById(id).get();
+	}
 
 }

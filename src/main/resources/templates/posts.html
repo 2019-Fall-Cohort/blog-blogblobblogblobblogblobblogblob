@@ -31,16 +31,17 @@
                         <input type="text" name="text"></input>
                     </div>
                     <div>
-                        <select>
-                            <option>
-                                Author dropdown here
+                        <select name="authorId">
+                            <option value="">Select an Author</option>
+                            <option th:each="author: ${authors}" th:value="${author.id}" th:text="${author.name}">
                             </option>
                         </select>
                     </div>
                     <div>
-                        <select>
-                            <option>
-                                Category dropdown here
+                        <select name="categoryId">
+                            <option value="">Select a Category</option>
+                            <option th:each="category : ${categories}" th:value="${category.id}"
+                                th:text="${category.name}">
                             </option>
                         </select>
                     </div>
