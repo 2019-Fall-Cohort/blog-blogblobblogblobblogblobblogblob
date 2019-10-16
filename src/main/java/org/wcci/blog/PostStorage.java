@@ -9,8 +9,8 @@ public class PostStorage {
 	@Autowired
 	private PostRepository postRepo;
 	
-	public void addPost(Post testPost) {
-		postRepo.save(testPost);		
+	public void addPost(Post post) {
+		postRepo.save(post);		
 	}
 	
 	public Iterable<Post> findAllPosts() {

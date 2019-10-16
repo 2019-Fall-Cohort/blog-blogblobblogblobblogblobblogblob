@@ -1,8 +1,11 @@
 package org.wcci.blog;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Author {
@@ -12,6 +15,9 @@ public class Author {
 	private Long id;
 	
 	private String name;
+	
+	@OneToMany(mappedBy = "author")
+	private List<Post> posts;
 
 	public Author(String name) {
 		this.name = name;
