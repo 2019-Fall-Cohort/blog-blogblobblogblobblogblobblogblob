@@ -45,6 +45,14 @@
                             </option>
                         </select>
                     </div>
+                    <div>
+                            <select multiple name="tagId">
+                                <option value="">Select Tag(s)</option>
+                                <option th:each="tag : ${tags}" th:value="${tag.id}"
+                                    th:text="${tag.name}">
+                                </option>
+                            </select>
+                        </div>
                     <button>Submit</button>
                 </form>
             </section>
@@ -53,6 +61,8 @@
                 <ul th:each="post: ${posts}">
                     <li th:text="${post.title}">Post Title</li>
                     <li th:text="${post.text}">Post Text</li>
+                    <li th:text="${post.category.name}">Category Name</li>
+                    <li th:each="tag: ${post.tags}" th:text="${tag.name}">Tag</li>   
                 </ul>
             </section>
 

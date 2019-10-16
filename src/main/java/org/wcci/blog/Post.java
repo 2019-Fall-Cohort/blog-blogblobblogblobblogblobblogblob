@@ -52,12 +52,18 @@ public class Post {
 		return category;
 	}
 
+	public void addTags(List<Tag> tags) {
+		this.tags = tags;		
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", text=" + text + ", title=" + title + ", author=" + author + ", category="
-				+ category + "]";
+				+ category + ", tags=" + tags + "]";
 	}
-
-
 	
 }
