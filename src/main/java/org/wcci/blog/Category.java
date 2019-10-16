@@ -1,8 +1,11 @@
 package org.wcci.blog;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
@@ -12,6 +15,9 @@ public class Category {
 	private Long id;
 	
 	private String name;
+	
+	@OneToMany(mappedBy = "category")
+	private List<Post> posts;
 
 	public Category(String name) {
 		this.name = name;
