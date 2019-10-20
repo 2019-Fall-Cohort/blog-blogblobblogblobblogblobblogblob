@@ -14,7 +14,7 @@ public class AuthorStorage {
 	}
 	
 	public Iterable<Author> findAllAuthors() {
-		return authorRepo.findAll();
+		return authorRepo.findAllByOrderByNameAsc();
 	}
 	
 	public void addAuthorToAvoidNullPointer() {
