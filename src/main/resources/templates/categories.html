@@ -15,27 +15,25 @@
 
         <section class="main__header" th:insert="/html/sections/header :: header"></section>
         <section class="main__nav" th:insert="/html/sections/nav :: nav"></section>
-
-        <article class="category__container">
-
+        <section class="content__wrapper">
             <h2 class="article__title">Add & View Categories</h2>
-
-            <section class="category__form">
-                <form action="/createCategory" method="POST">
-                    <label for="name">Category name:</label>
-                    <input type="text" name="name"></input>
-                    <button>Submit</button>
-                </form>
-            </section>
-
-            <section class="category__list">
-                <ul th:each="category: ${categories}">
-                    <li th:text="${category.name}">Name should go here</li>
-                </ul>
-            </section>
-
-        </article>
-
+            <article class="content__container">
+                <div class="entry-form">
+                    <section class="category__form">
+                        <form action="/createCategory" method="POST">
+                            <label for="name">Category name:</label>
+                            <input type="text" name="name"></input>
+                            <button>Submit</button>
+                        </form>
+                    </section>
+                </div>
+                <div class="existing-data">
+                    <ul class="existing-data__list" th:each="category: ${categories}">
+                        <li class="existing-data__row" th:text="${category.name}">Name should go here</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
         <section class="main__footer" th:insert="/html/sections/footer :: footer"></section>
     </div>
 

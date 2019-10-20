@@ -1,5 +1,7 @@
 package org.wcci.blog;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,12 @@ public class PostStorage {
 	}
 	
 	public Iterable<Post> findAllPosts() {
-		return postRepo.findAll();
+		return postRepo.findAllByOrderByIdDesc();
+	}
+
+	public void addTagsToPost(Post post, List<Tag> tags) {
+		post.addTags(tags);
+		postRepo.save(post);
 	}
 	
 }

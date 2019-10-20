@@ -11,7 +11,7 @@ public class CategoryStorage {
 	
 
 	public Iterable<Category> findAllCategories() {
-		return categoryRepo.findAll();
+		return categoryRepo.findAllByOrderByNameAsc();
 	}
 
 	public void addCategory(Category category) {

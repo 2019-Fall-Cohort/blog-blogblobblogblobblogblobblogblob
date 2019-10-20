@@ -1,8 +1,11 @@
 package org.wcci.blog;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -17,6 +20,8 @@ public class Post {
 	private Author author;
 	@ManyToOne
 	private Category category;
+	@ManyToMany
+	private List<Tag> tags;
 	
 	public Post(String title, String text, Author author, Category category) {
 		this.title = title;
@@ -47,12 +52,18 @@ public class Post {
 		return category;
 	}
 
+	public void addTags(List<Tag> tags) {
+		this.tags = tags;		
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", text=" + text + ", title=" + title + ", author=" + author + ", category="
-				+ category + "]";
+				+ category + ", tags=" + tags + "]";
 	}
-
-
 	
 }
