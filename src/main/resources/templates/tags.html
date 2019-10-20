@@ -15,9 +15,9 @@
 
         <section class="main__header" th:insert="/html/sections/header :: header"></section>
         <section class="main__nav" th:insert="/html/sections/nav :: nav"></section>
-        <section class="content__container">
-            <article class="tag__container">
-                <h2 class="article__title">Add & View Tags</h2>
+        <section class="content__wrapper">
+            <h2 class="article__title">Add & View Tags</h2>
+            <article class="content__container">
                 <div class="entry-form">
                     <section class="tag__form">
                         <form action="/createTag" method="POST">
@@ -29,14 +29,15 @@
                 </div>
                 <div class="existing-data">
                     <section class="tag__list">
-                        <ul th:each="tag: ${tags}">
-                            <li th:text="${tag.name}">Name should go here</li>
+                        <ul class="existing-data__list" th:each="tag: ${tags}">
+                            <li class="existing-data__row" th:text="${tag.name}">Name should go here</li>
                         </ul>
                     </section>
                 </div>
             </article>
         </section>
         <section class="main__footer" th:insert="/html/sections/footer :: footer"></section>
+
     </div>
 
 </body>

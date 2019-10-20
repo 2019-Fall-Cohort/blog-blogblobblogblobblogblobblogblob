@@ -15,9 +15,9 @@
 
         <section class="main__header" th:insert="/html/sections/header :: header"></section>
         <section class="main__nav" th:insert="/html/sections/nav :: nav"></section>
-        <section class="content__container">
-            <article class="post__container">
-                <h2 class="article__title">Add & View Posts</h2>
+        <section class="content__wrapper">
+            <h2 class="article__title">Add & View Posts</h2>
+            <article class="content__container">
                 <div class="entry-form">
                     <section class="post__form">
                         <form action="/createPost" method="POST">
@@ -57,44 +57,25 @@
                     </section>
                 </div>
                 <div class="existing-data">
-
-
-                    <section class="post__list">
-                        <ul th:each="post: ${posts}">
-                            <li th:text="${post.title}">Post Title</li>
-                            <li th:text="${post.text}">Post Text</li>
-                            <li th:text="${post.category.name}">Category Name</li>
-                            <li th:each="tag: ${post.tags}" th:text="${tag.name}">Tag</li>
-                        </ul>
-                    </section>
-
-                    <!-- <section class="post__list">
-                        <div class="existing-data__card" th:each="post: ${posts}">
-                            <div class="existing-data__row">Title:
-                                <div th:text="${post.title}"></div>
+                    <div class="existing-data__card-container">
+                        <section class="existing-data__card" th:each="post: ${posts}">
+                            <div class="existing-data__card-content">
+                                <div class="existing-data__row existing-data__row-title" th:text="${post.title}">Post
+                                    Title
+                                </div>
+                                <div class="existing-data__row existing-data__row-text" th:text="${post.text}">Post Text
+                                </div>
+                                <div class="existing-data__row existing-data__row-category"
+                                    th:text="${post.category.name}">
+                                    Category Name</div>
+                                <div class="existing-data__row existing-data__row-tag" th:each="tag: ${post.tags}"
+                                    th:text="${tag.name}">Tag</div>
                             </div>
-                            <div class="existing-data__row">Category:
-                                <div th:text="${post.category.name}"></div>
-                            </div>
-                            <div class="existing-data__row">Blogger:
-                                <div th:text="${post.author.name}"></div>
-                            </div>
-                            <div class="existing-data__row">Tag(s):
-                                <div th:each="tag: ${post.tags}" th:text="${tag.name}"></div>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="review-tag">
-                        <h3 class="review-item__header-tag" th:each="tag: ${review.tags}">
-                            <div th:text="${tag.tagName}"></div>
-                        </h3>
+                        </section>
                     </div>
-                </div>
-            </article>
-        </section> -->
-
-                    <section class="main__footer" th:insert="/html/sections/footer :: footer"></section>
-                </div>
+        </section>
+        <section class="main__footer" th:insert="/html/sections/footer :: footer"></section>
+    </div>
 
 </body>
 

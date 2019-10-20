@@ -15,11 +15,11 @@
 
         <section class="main__header" th:insert="/html/sections/header :: header"></section>
         <section class="main__nav" th:insert="/html/sections/nav :: nav"></section>
-        <section class="content__container">
-            <article class="author__container">
-                <h2 class="article__title">Add & View Authors</h2>
+        <section class="content__wrapper">
+            <h2 class="article__title">Add & View Authors</h2>
+            <article class="content__container">
                 <div class="entry-form">
-                    <section class="author__form">
+                    <section class="author-form">
                         <form action="/createAuthor" method="POST">
                             <label for="name">Author name:</label>
                             <input type="text" name="name"></input>
@@ -28,11 +28,9 @@
                     </section>
                 </div>
                 <div class="existing-data">
-                    <section class="author__list">
-                        <ul th:each="author: ${authors}">
-                            <li th:text="${author.name}">Name should go here</li>
-                        </ul>
-                    </section>
+                    <ul class="existing-data__list" th:each="author: ${authors}">
+                        <li class="existing-data__row" th:text="${author.name}">Name should go here</li>
+                    </ul>
                 </div>
             </article>
         </section>
