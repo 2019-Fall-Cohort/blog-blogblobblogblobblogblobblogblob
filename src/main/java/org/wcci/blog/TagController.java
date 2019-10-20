@@ -8,24 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class TagController {
-	
+
 	@Autowired
 	private TagStorage tagStorage;
-	
+
 	@GetMapping("/tags")
 	public String prepareTagView(Model model) {
 		Iterable<Tag> retrievedTags = tagStorage.findAllTags();
 		model.addAttribute("tags", retrievedTags);
 		return "tags";
 	}
-	
+
 	@PostMapping("/createTag")
 	public String createTag(String name) {
 		Tag tag = new Tag(name);
 		tagStorage.addTag(tag);
 		return "redirect:/tags";
-		
 	}
-	
 
 }

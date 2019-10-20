@@ -20,20 +20,23 @@
 
             <h2 class="article__title">Add & View Categories</h2>
 
-            <section class="category__form">
-                <form action="/createCategory" method="POST">
-                    <label for="name">Category name:</label>
-                    <input type="text" name="name"></input>
-                    <button>Submit</button>
-                </form>
-            </section>
+            <div class="entry-form">
+                <section class="category__form">
+                    <form action="/createCategory" method="POST">
+                        <label for="name">Category name:</label>
+                        <input type="text" name="name"></input>
+                        <button>Submit</button>
+                    </form>
+                </section>
+            </div>
 
-            <section class="category__list">
-                <ul th:each="category: ${categories}">
-                    <li th:text="${category.name}">Name should go here</li>
-                </ul>
-            </section>
-
+            <div class="existing-data">
+                <section class="category__list">
+                    <ul th:each="category: ${categories}">
+                        <li th:text="${category.name}">Name should go here</li>
+                    </ul>
+                </section>
+            </div>
         </article>
 
         <section class="main__footer" th:insert="/html/sections/footer :: footer"></section>

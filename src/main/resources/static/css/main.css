@@ -22,7 +22,6 @@ html {
 }
 
 .author__form {
-  font: var(--content-font);
 }
 
 .author__list {
@@ -39,7 +38,6 @@ html {
 }
 
 .category__form {
-  font: var(--content-font);
 }
 
 .category__list {
@@ -49,14 +47,29 @@ html {
   justify-content: flex-start;
 }
 
-.entity-card__container {
+.content__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  overflow-wrap: normal;
+  min-height: 0;
+  overflow: wrap;
 }
 
-.entity-card__figure {
+.entry-form {
+  font: var(--content-font);
+}
+
+.existing-data {
+  font: var(--content-font);
+}
+
+.landing__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.landing__figure {
   max-height: 100%;
   max-width: 100%;
 }
@@ -70,6 +83,12 @@ html {
   background-color: brown;
 }
 
+.main__header-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .main__nav {
   background-color: blanchedalmond;
   max-width: 100%;
@@ -81,9 +100,7 @@ html {
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
-}
-
-  
+}  
 
 .main__wrapper {
   display: flex;
