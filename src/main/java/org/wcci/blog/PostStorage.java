@@ -16,7 +16,7 @@ public class PostStorage {
 	}
 	
 	public Iterable<Post> findAllPosts() {
-		return postRepo.findAll();
+		return postRepo.findAllByOrderByIdDesc();
 	}
 
 	public void addTagsToPost(Post post, List<Tag> tags) {

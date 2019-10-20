@@ -14,7 +14,7 @@ public class TagStorage {
 	}
 	
 	public Iterable<Tag> findAllTags() {
-		return tagRepo.findAll();
+		return tagRepo.findAllByOrderByNameAsc();
 	}
 	
 	public void addTagToAvoidNullPointer() {
